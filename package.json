@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "video.js": "^8.23.6",
+    "videojs-markers": "^1.0.1",
     "vue": "^3.4.15"
   },
   "devDependencies": {
