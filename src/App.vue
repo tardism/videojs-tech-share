@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <h1>Vue.js + Video.js Example</h1>
+
+    <!-- Video Uploader -->
+     <!-- it will trigger handleVideoUploaded method in App.vue when a new video is uploaded -->
+    <VideoUploader @video-uploaded="handleVideoUploaded" />
+
     <div class="video-container">
       <VideoPlayer :options="videoOptions" />
     </div>
@@ -9,13 +14,13 @@
 
 <script>
 import VideoPlayer from './components/VideoPlayer.vue';
-
-
+import VideoUploader from './components/VideoUploader.vue';
 
 export default {
   name: 'App',
   components: {
-    VideoPlayer
+    VideoPlayer,
+    VideoUploader
   },
   data() {
     return {
@@ -33,6 +38,20 @@ export default {
         poster: 'https://vjs.zencdn.net/v/oceans.png'
       }
     };
+  },
+  methods: {
+    handleVideoUploaded(videoUrl) {
+      // update the video source when a new video is uploaded
+      this.videoOptions.sources = [
+        {
+          src: videoUrl,
+          type: 'video/mp4'
+        }
+      ];
+
+      // remove poster when playing uploaded video
+      this.videoOptions.poster = '';
+    }
   }
 };
 </script>

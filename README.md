@@ -40,3 +40,14 @@ videoOptions: {
 ## Video.js Documentation
 
 For more options and features, see the [Video.js documentation](https://docs.videojs.com/).
+
+Google Cloud Upload Guide:
+https://cloud.google.com/storage/docs/uploading-objects?utm_source=chatgpt.com#storage-upload-object-nodejs 
+
+Differnece of Firebase Storage and Google Cloud Storage:
+https://stackoverflow.com/questions/61784913/what-is-the-difference-between-firebase-storage-and-cloud-firestore-realtime-dat 
+
+Upload to firebase storage:
+https://cloud.google.com/storage/docs/uploading-objects?utm_source=chatgpt.com#storage-upload-object-nodejs
+
+If use aws s3, see:

@@ -65,6 +65,7 @@ export default {
   },
 
   mounted() {
+    // get the video link 
     this.player = videojs(this.$refs.videoPlayer, this.options, () => {
       console.log("Video ready");
 
@@ -82,6 +83,19 @@ export default {
         }
       });
     });
+  },
+  // it's watching in options 
+  // https://videojs.org/guides/options/#sources
+  watch: {
+    options: {
+      handler(newOptions) {
+        if (this.player && newOptions.sources) {
+          this.player.src(newOptions.sources);
+          this.player.load();
+        }
+      },
+      deep: true
+    }
   },
 
   methods: {
