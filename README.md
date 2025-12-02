@@ -37,7 +37,7 @@ videoOptions: {
 }
 ```
 
-## Video.js Documentation
+## Documentation
 
 For more options and features, see the [Video.js documentation](https://docs.videojs.com/).
 
@@ -52,3 +52,9 @@ https://cloud.google.com/storage/docs/uploading-objects?utm_source=chatgpt.com#s
 
 Vue js + video js:
 https://videojs.org/guides/vue/ 
+
+Video js Plugins:
+https://videojs.org/plugins/ 
+
+Progress Bar Marker:
+https://www.npmjs.com/package/videojs-markers-plugin 
