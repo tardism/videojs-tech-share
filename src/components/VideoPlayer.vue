@@ -1,4 +1,4 @@
-
+<!-- npm install videojs-markers -->
 <template>
   <div>
     <video ref="videoPlayer" class="video-js vjs-default-skin"></video>

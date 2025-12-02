@@ -2,12 +2,16 @@
   <div id="app">
     <h1>Vue.js + Video.js Example</h1>
 
-    <!-- Video Uploader -->
-     <!-- it will trigger handleVideoUploaded method in App.vue when a new video is uploaded -->
-    <VideoUploader @video-uploaded="handleVideoUploaded" />
+    <Auth @user-changed="handleUserChanged" />
 
-    <div class="video-container">
-      <VideoPlayer :options="videoOptions" />
+    <div v-if="user">
+      <!-- Video Uploader -->
+       <!-- it will trigger handleVideoUploaded method in App.vue when a new video is uploaded -->
+      <VideoUploader @video-uploaded="handleVideoUploaded" />
+
+      <div class="video-container">
+        <VideoPlayer :options="videoOptions" />
+      </div>
     </div>
   </div>
 </template>
@@ -15,15 +19,18 @@
 <script>
 import VideoPlayer from './components/VideoPlayer.vue';
 import VideoUploader from './components/VideoUploader.vue';
+import Auth from './components/Auth.vue';
 
 export default {
   name: 'App',
   components: {
     VideoPlayer,
-    VideoUploader
+    VideoUploader,
+    Auth
   },
   data() {
     return {
+      user: null,
       videoOptions: {
         autoplay: false,
         controls: true,
@@ -40,6 +47,9 @@ export default {
     };
   },
   methods: {
+    handleUserChanged(user) {
+      this.user = user;
+    },
     handleVideoUploaded(videoUrl) {
       // update the video source when a new video is uploaded
       this.videoOptions.sources = [
