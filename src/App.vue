@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Vue.js + Video.js Example</h1>
+    <h1>Vue + Video.js & Firebase CloudStorage Example</h1>
 
     <Auth @user-changed="handleUserChanged" />
 
